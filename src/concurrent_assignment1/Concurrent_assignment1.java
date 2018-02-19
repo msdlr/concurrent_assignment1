@@ -5,6 +5,7 @@
  */
 package concurrent_assignment1;
 
+import A.Reference;
 import B.*;
 
 /**
@@ -16,8 +17,13 @@ public class Concurrent_assignment1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        //Exercise A
         
+        System.out.println("EXERCISE A\n");
+        Reference reference= new Reference();
+        reference.main();
+        System.out.println("\n");
         /* Exercise B */
         Numbers test = new Numbers();
         System.out.println("EXERCISE B\n");

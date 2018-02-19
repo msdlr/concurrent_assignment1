@@ -8,6 +8,23 @@ package B;
  * @author yournamehere
  */
 
-public class T_PrintID {
+public class T_PrintID extends Thread {
+    
+long variableID;
+
+/* Constructor */
+    public T_PrintID() {
+        this.variableID = this.getId();
+    }
+
+/* Methods */    
+
+    @Override
+    public void run(){
+    for (int i = 0; i < 10; i++) {
+        System.out.println("ID: "+this.variableID);
+    }
+}
+
 
 }

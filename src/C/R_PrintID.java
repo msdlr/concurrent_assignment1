@@ -1,4 +1,4 @@
-package concurrent_assignment1.C;
+package C;
 /**
  * Modify class concurrent_assignment1.B.TPrintID so that it is created implementing Runnable 
  * (call the new class R_PrintID). 

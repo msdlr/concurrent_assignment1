@@ -1,4 +1,4 @@
-package concurrent_assignment1.D;
+package D;
 
 /** Lazy must:
  * - Extend Thread

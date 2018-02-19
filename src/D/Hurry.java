@@ -1,4 +1,4 @@
-package concurrent_assignment1.D;
+package D;
 /**
  * Hurry must:
  * - Be the main thread

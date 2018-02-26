@@ -29,13 +29,13 @@ public class Lazy extends Thread{
             
             switch(messageNumber){
                 case 0:
-                    System.out.println("Lazy: I'm dressing up... Just a sec, please");
+                    System.out.println("Lazy: I'm dressing up... Just a sec, please\n");
                     break;
                 case 1:
-                    System.out.println("Lazy: This clothes do not suite me...");
+                    System.out.println("Lazy: This clothes do not suite me...\n");
                     break;
                 default:
-                    System.out.println("[If this appears one it's an error. Otherwise it's a feature]");
+                    System.out.println("[If this appears one it's an error. Otherwise it's a feature]\n");
             }
             
             try {

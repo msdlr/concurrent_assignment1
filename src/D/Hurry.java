@@ -12,6 +12,37 @@ package D;
  */
 
 
-public class Hurry {
+public class Hurry  {
+     
+     Lazy a = new Lazy();
+     
 
+   
+    public void main() throws InterruptedException {
+        a.run();
+        for (int i = 0; i < 5; i++) {
+            Thread.sleep(1000);
+            if(!a.isInterrupted()) {   
+                System.out.println("Hurry: Aren´t you ready yet?");
+            } else if (i==5){
+                System.out.println("Hurry: you´re resting in your laurels… and I am leaving!");
+                a.interrupted();
+            }
+            else{
+                System.out.println("Hurry: At last, a turtle runs rings round you!");
+            }
+            
+        }
+        
+        
+    }
+
+    
+     
+     
+         
+         
+     
+    
+    
 }

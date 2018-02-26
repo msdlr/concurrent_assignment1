@@ -29,22 +29,22 @@ public class Lazy extends Thread{
     @Override
     public void run() {
         int iterations = r.nextInt(10);
-        for (int i = 0; i < iterations-2 & !this.isInterrupted(); i++) {
+        for (int i = 0; i < iterations-2 && !this.isInterrupted(); i++) {
             int messageNumber = r.nextInt(1);
             
             switch(messageNumber){
                 case 0:
-                    System.out.println("Lazy: I'm dressing up... Just a sec, please\n");
+                    System.out.println("Lazy: I'm dressing up... Just a sec, please");
                     break;
                 case 1:
-                    System.out.println("Lazy: This clothes do not suite me...\n");
+                    System.out.println("Lazy: This clothes do not suite me...");
                     break;
                 default:
-                    System.out.println("[If this appears one it's an error. Otherwise it's a feature]\n");
+                    System.out.println("[If this appears one it's an error. Otherwise it's a feature]");
             }
             
             try {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Lazy.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Lazy: That’s not cricket, please play the game!");

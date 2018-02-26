@@ -18,9 +18,15 @@ import java.util.logging.Logger;
 
 public class Lazy extends Thread{
     Random r= new Random();
+    boolean isInterrupted = false;
     public Lazy() {
     }
 
+    @Override
+    public boolean isInterrupted(){
+        return super.isInterrupted();
+    }
+    
     @Override
     public void run() {
         int iterations = r.nextInt(10);
@@ -42,6 +48,7 @@ public class Lazy extends Thread{
                 Thread.sleep(10000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Lazy.class.getName()).log(Level.SEVERE, null, ex);
+                boolean isInterrupted = true;
                 System.out.println("Lazy: That’s not cricket, please play the game!");
             }
             System.out.println("I  am  ready, the  early  bird  catches  the worm!");

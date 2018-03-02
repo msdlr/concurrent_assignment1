@@ -44,7 +44,7 @@ public class Lazy extends Thread{
             }
             
             try {
-                Thread.sleep(1000);
+                Thread.join(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Lazy.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Lazy: That’s not cricket, please play the game!");

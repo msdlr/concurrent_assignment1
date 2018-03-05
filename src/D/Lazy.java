@@ -1,5 +1,6 @@
 package D;
 
+import static java.lang.System.exit;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +30,8 @@ public class Lazy extends Thread{
     @Override
     public void run() {
         int iterations = r.nextInt(10);
-        for (int i = 0; i < iterations-2 && !this.isInterrupted(); i++) {
+        int i = 0;
+        for (i = 0; i < iterations-2 && !this.isInterrupted(); i++) {
             int messageNumber = r.nextInt(1);
             
             switch(messageNumber){
@@ -44,13 +46,18 @@ public class Lazy extends Thread{
             }
             
             try {
-                Thread.join(1000);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Lazy.class.getName()).log(Level.SEVERE, null, ex);
+               // Logger.getLogger(Lazy.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Lazy: That’s not cricket, please play the game!");
-            }            
+            }
+               
         }
-        System.out.println("I  am  ready, the  early  bird  catches  the worm!");
+        if (i==iterations-2) {
+            System.out.println("Lazy: I  am  ready, the  early  bird  catches  the worm!");
+            exit(0);
+        }
+        
     }
     
 

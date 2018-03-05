@@ -1,4 +1,7 @@
 package D;
+
+
+
 /**
  * Hurry must:
  * - Be the main thread
@@ -19,22 +22,29 @@ public class Hurry  {
 
    
     public void main() throws InterruptedException {
-        a.run();
-        for (int i = 0; i < 5; i++) {
+        a.start();
+        int i;
+        for ( i = 0; i < 5 && a.isAlive(); i++) {
             Thread.sleep(1000);
-            if(!a.isInterrupted()) {   
+            if(i==0){
+             // a.interrupt();
                 System.out.println("Hurry: Aren´t you ready yet?");
-            } else if (i==5){
-                System.out.println("Hurry: you´re resting in your laurels… and I am leaving!");
-                a.interrupted();
-            }
-            else{
-                System.out.println("Hurry: At last, a turtle runs rings round you!");
             }
             
+            if(i==4){
+                System.out.println("Hurry: At last, a turtle runs rings round you!");
+               
+            }
+     
+            
         }
+            if (i==5){
+                a.interrupt();
+                System.out.println("Hurry: you´re resting in your laurels… and I am leaving!");
+                
+                
         
-        
+            }
     }
 
     
